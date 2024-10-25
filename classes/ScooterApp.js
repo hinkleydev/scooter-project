@@ -24,7 +24,8 @@ class ScooterApp {
       throw "User has been registered";
     }
     const user = new User(username, password, age); // Error checking is done by the User module
-    ScooterApp.registeredUsers[username] = (user); 
+    ScooterApp.registeredUsers[username] = (user);
+    console.log(user.username + " has been registered");
   }
 
   /**
@@ -39,6 +40,7 @@ class ScooterApp {
       throw "User not found";
     }
     user.login(password); // Error checking is done by the User module
+    console.log(user.username + " has been logged in");
     return user;
   }
 
@@ -54,6 +56,7 @@ class ScooterApp {
       throw "User is logged out";
     }
     user.isLoggedIn = false;
+    console.log(user.username + " has been logged out");
   }
   
   /**
@@ -76,6 +79,7 @@ class ScooterApp {
     ScooterApp.checkStation(station)
     let scooter = new Scooter(station);
     ScooterApp.stations[station].push(scooter);
+    console.log("Created new scooter #" + scooter.serial + " created in " + station);
     return scooter;
   }
   
@@ -96,6 +100,7 @@ class ScooterApp {
     });
     ScooterApp.stations[location].splice(foundScooterIndex, 1); // Delete the scooter from the station
     scooter.rent(user); // Rent it out to the user
+    console.log("Scooter #" + scooter.serial + " has been rented out by " + user.username);
   }
 
   /**
@@ -110,6 +115,7 @@ class ScooterApp {
     }
     scooter.dock(station); // Automatically removes the user and sets the property
     ScooterApp.stations[station].push(scooter);
+    console.log("Scooter #" + scooter.serial + " has been docked at " + station);
   }
   
 }
