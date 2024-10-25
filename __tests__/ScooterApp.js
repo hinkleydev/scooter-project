@@ -129,5 +129,7 @@ describe("ScooterApp.rentScooter(scooter, user)", () => {
     expect( () => {
       ScooterApp.rentScooter(scooter, secondUser);
     }).toThrow("Scooter already rented");
+
+    ScooterApp.print();
   });
 });

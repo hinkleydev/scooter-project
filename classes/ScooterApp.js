@@ -118,6 +118,22 @@ class ScooterApp {
     console.log("Scooter #" + scooter.serial + " has been docked at " + station);
   }
   
+  /**
+   * Print out list of stations and scooters at each
+   */
+  static print() {
+    console.log("--- LIST ---")
+    const stations = ScooterApp.stations;
+    for(let station in stations) {
+      console.log("- Station " + station + " -")
+      for(let scooter of stations[station]) {
+        const state = scooter.isBroken ? "broken" : "working";
+        const charge = scooter.charge;
+        const serial = scooter.serial;
+        console.log("Scooter #" + serial + " is " + state + " and at " + charge + "% charge");
+      }
+    }
+  }
 }
 
 module.exports = ScooterApp;
