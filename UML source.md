@@ -1,3 +1,5 @@
+![UML diagram](./UML.png)
+
 To render this, please use [mermaid.live](https://mermaid.live)
 ```plain
 classDiagram
