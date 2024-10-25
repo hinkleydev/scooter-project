@@ -57,6 +57,7 @@ class Scooter {
    */
   recharge() {
     this.charge = 100;
+    // RE:Extension, how would this be done incrementally? 10% at a time? Unsure
   }
 
   /**
