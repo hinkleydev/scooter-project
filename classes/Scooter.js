@@ -8,8 +8,7 @@ class Scooter {
   isBroken = false;
   // I made this private in the UML diagram, but in practice that won't work
   user = null;
-  // TODO - Update UML to reflect this
-
+  
   /** Create a scooter, it's automatically docked at the specified station
    * 
    * @param {String} station 
@@ -56,7 +55,6 @@ class Scooter {
    * 
    * It turns out a this.charge and this.charge() confuses JavaScript, I'll have to change the UML to reflect this
    */
-  // TODO - Update UML to reflect the rename
   recharge() {
     this.charge = 100;
   }

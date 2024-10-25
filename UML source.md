@@ -1,4 +1,4 @@
-![UML diagram](./UML.png)
+![UML diagram](./UML2.png)
 
 To render this, please use [mermaid.live](https://mermaid.live)
 ```plain
@@ -9,13 +9,13 @@ classDiagram
     note for Scooter "Can not operate if broken or charge < 20"
     class Scooter{
         +String/null station
-        -User/null user
+        +User/null user
         +Number serial
         +Number charge
         +Boolean isBroken
         +rent(User user) void
         +dock(String station) void
-        +charge() void
+        +recharge() void
         +repair() void
         nextSerial() Number$
     }
@@ -28,15 +28,16 @@ classDiagram
         +login(String password) void
         +logout() void
     }
-    class ScooterApp {
-        +Object[names->station] stations
-        +Object[usernames->users] registeredUsers
-        +registerUser(String username, String password, Number age) User
-        +loginUser(String username, String password) User
-        +logoutUser(String username) void
-        +createScooter(String station) Scooter
-        +dockScooter(Scooter scooter, String station) void
-        +rentScooter(Scooter scooter, User user) Scooter
-        +print() void
+    note for ScooterApp "All methods and properties are static"
+    class ScooterApp{
+        Object[names->station] stations
+        Object[usernames->users] registeredUsers
+        registerUser(String username, String password, Number age) User
+        loginUser(String username, String password) User
+        logoutUser(String username) void
+        createScooter(String station) Scooter
+        dockScooter(Scooter scooter, String station) void
+        rentScooter(Scooter scooter, User user) Scooter
+        print() void
     }
 ```

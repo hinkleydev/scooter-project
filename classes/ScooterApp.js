@@ -2,8 +2,6 @@ const Scooter = require("./Scooter.js");
 const User = require("./User.js");
 
 class ScooterApp {
-  // TODO - Update the UML to reflect that all of these are static
-  
   static stations = { 
     "ONE" : [], 
     "TWO" : [], 
